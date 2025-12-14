@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoodTune 🎵</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <h1>🎧 MoodTune</h1>
+    <p>Detect your emotion and get the perfect vibe</p>
+
+    <div class="camera-box">
+        <video id="video" autoplay></video>
+        <canvas id="canvas" hidden></canvas>
+    </div>
+
+    <button onclick="captureImage()">Detect Emotion</button>
+
+    <div class="result">
+        <h2 id="emotion">Emotion: --</h2>
+        <h3 id="confidence">Confidence: --</h3>
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>

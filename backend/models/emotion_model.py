@@ -45,7 +45,12 @@ def predict_emotion(image):
     face = face.astype("float32") / 255.0
     face = np.reshape(face, (1, 64, 64, 1))
 
-    preds = model.predict(face, verbose=0)
-    emotion_index = np.argmax(preds)
+    preds = model.predict(face, verbose=0)[0]
 
-    return EMOTIONS[emotion_index]
+    emotion_index = int(np.argmax(preds))
+    confidence = float(preds[emotion_index])
+
+    return {
+        "emotion": EMOTIONS[emotion_index],
+        "confidence": round(confidence, 2)
+    }
