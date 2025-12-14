@@ -1,0 +1,1 @@
+from models.emotion_model import predict_emotion
