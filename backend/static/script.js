@@ -47,5 +47,18 @@ function sendToBackend(blob) {
         emotionText.innerText = "Error detecting emotion";
         confidenceText.innerText = "";
     }
+    const emotionColors = {
+    Happy: "#4caf50",
+    Sad: "#2196f3",
+    Angry: "#f44336",
+    Neutral: "#9e9e9e",
+    Surprise: "#ff9800"
+};
+
+document.body.style.background =
+    emotionColors[data.emotion] || "#1d2671";
+document.getElementById("confidenceBar").style.width =
+    (confidenceValue * 100) + "%";
+
 });
 }
